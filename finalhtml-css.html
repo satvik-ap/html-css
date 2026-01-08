@@ -1,0 +1,175 @@
+<html>
+<head>
+    <title>HTML Practice Page</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #main-heading {
+            text-align: center;
+            font-size: 40px;
+            text-shadow: 2px 2px 5px gray;
+            color: darkblue;
+        }
+
+        #main-heading:hover {
+            color: orange;
+        }
+
+        h3 {
+            text-align: center;
+            color: rgb(180, 150, 255);
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .description {
+            background-color: #f0f0ff;
+            border-radius: 8px;
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        #additional-info {
+            border: 3px solid orange;
+            background-color: #fff3e0;
+            padding: 10px;
+            transform: rotate(-1deg);
+        }
+
+        hr {
+            width: 50%;
+            height: 4px;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+        }
+
+        pre {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            padding: 10px;
+        }
+
+        .unordered-list {
+            list-style: none;
+            background-color: #ffeefc;
+            padding: 10px;
+        }
+
+        .unordered-list li {
+            margin-bottom: 5px;
+        }
+
+        #ordered-list {
+            list-style-type: upper-roman;
+            font-weight: bold;
+            padding-left: 25px;
+        }
+
+        #ordered-list li {
+            margin-bottom: 5px;
+        }
+
+        .fancy-link {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .fancy-link:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .accent-word {
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #submit-btn {
+            background-color: yellow;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: gold;
+            box-shadow: 2px 2px 5px gray;
+            transform: scale(1.03);
+        }
+
+        .footer {
+            font-size: 12px;
+            color: gray;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to HTML Practice Page</h1>
+
+    <h3>Subheading: Learning HTML Basics</h3>
+
+    <p class="description">
+        HTML stands for <b>HyperText Markup Language</b> and is used to create
+        <strong>web pages</strong>. It allows you to structure content using various tags.
+        For example, you can <i>italicize</i> text or <em>emphasize</em> certain words.
+    </p>
+
+    <p id="additional-info">
+        HTML is essential for web development. It includes elements like
+        <mark>headings</mark>, paragraphs, and lists. The chemical formula for water is
+        H<sub>2</sub>O, and the value of pi is approximately 3.14<sup>2</sup>.<br>
+        This is a new line in the same paragraph.
+    </p>
+
+    <hr>
+
+    <pre>
+This is a preformatted text.
+You can keep    spaces and
+line breaks exactly as written.</pre>
+
+    <ul class="unordered-list">
+        <li>First unordered item</li>
+        <li>Second unordered item</li>
+        <li>Third unordered item</li>
+    </ul>
+
+    <ol id="ordered-list">
+        <li>First step</li>
+        <li>Second step</li>
+        <li>Third step</li>
+    </ol>
+
+    <a href="https://www.google.com/" target="_blank" class="fancy-link">
+        Visit Google
+    </a>
+
+    <div class="card">
+        This is a sentence with a
+        <span class="accent-word">highlighted</span> word.
+    </div>
+
+    <button id="submit-btn">Submit</button>
+
+    <footer class="footer">
+        &copy; 2026 HTML Practice Page
+    </footer>
+</body>
+</html>
