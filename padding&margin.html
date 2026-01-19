@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>Box Model and Flex Tasks</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background: rgb(248,248,248);
+        }
+        h2{
+            margin-top: 40px;
+        }
+        .box{
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Task 1 Content vs Padding</h2>
+<div class="box" style="padding:20px;">Padding 20</div>
+<div class="box" style="padding:40px;">Padding 40</div>
+<div class="box" style="padding:80px;">Padding 80</div>
+<!-- Yes. Padding adds space inside the border, making the element appear larger. -->
+ <!-- No. It does not push other elements away -->
+<br>
+
+<h2>Task 2 Content vs Margin</h2>
+<div class="box" style="margin:40px;background:rgb(235,240,235);">Margin 40</div>
+<!-- No. It adds space outside the element -->
+ <!-- No. It belongs to the surrounding layout -->
+<br>
+
+<h2>Task 3 Padding and Background Relationship</h2>
+<div class="box" style="padding:30px;background:rgb(240,240,230);">Padding Space</div>
+<div class="box" style="margin:30px;background:rgb(240,240,230);">Margin Space</div>
+<!-- Padding space is colored -->
+ <!-- Margin is transparent -->
+  <!-- Padding is part of the element; margin is not -->
+<br>
+
+<h2>Task 4 Side-Specific Spacing</h2>
+<div class="box" style="padding:10px 50px 30px 70px;">Padding Sides</div>
+<div class="box" style="margin:60px 20px;">Margin Sides</div>
+<br>
+
+<h2>Task 5 Invalid and Extreme Values</h2>
+<div class="box" style="padding:-20px;">Padding -20</div>
+<div class="box" style="margin:-20px;">Margin -20</div>
+<br>
+
+<h2>Task 6 Margin Collapse Investigation</h2>
+<div class="box" style="margin-bottom:50px;">Box 1</div>
+<div class="box" style="margin-top:30px;">Box 2</div>
+<br>
+
+<h2>Task 7 Inline vs Block Elements</h2>
+<div class="box" style="background:rgb(255, 255, 255);">Div</div>
+<span class="box" style="display:inline-block;background:rgb(255, 255, 255);">Span</span>
+<br>
+
+<h2>Task 8 Why Flex Exists</h2>
+<div style="display:flex;gap:10px;">
+<div class="box" style="background:rgb(255, 255, 255);">1</div>
+<div class="box" style="background:rgb(255, 255, 255);">2</div>
+<div class="box" style="background:rgb(255, 255, 255);">3</div>
+</div>
+<br>
+
+<h2>Task 9 Padding Inside Flex Items</h2>
+<div style="display:flex;gap:10px;">
+<div class="box" style="padding:40px;">A</div>
+<div class="box" style="padding:10px;">B</div>
+</div>
+<br>
+
+<h2>Task 10 Margin Inside Flex Items</h2>
+<div style="display:flex;gap:20px;">
+<div class="box" style="background:rgb(255, 255, 255);">X</div>
+<div class="box" style="background:rgb(255, 255, 255);">Y</div>
+</div>
+<br>
+
+<h2>Task 11 Main Axis vs Cross Axis</h2>
+<div style="display:flex;flex-direction:column;gap:10px;">
+<div class="box" style="background:rgb(255, 255, 255);">Top</div>
+<div class="box" style="background:rgb(255, 255, 255);">Bottom</div>
+</div>
+<br>
+
+<h2>Task 12 justify-content vs margin</h2>
+<div style="display:flex;justify-content:space-between;">
+<div class="box" style="background:rgb(255, 255, 252);">Left</div>
+<div class="box" style="background:rgb(255, 255, 255);">Right</div>
+</div>
+<br>
+
+<h2>Task 13 align-items and Padding Interaction</h2>
+<div style="display:flex;align-items:center;height:150px;background:rgb(255, 255, 255);">
+<div class="box" style="padding:40px;background:rgb(255, 255, 255);">Center</div>
+</div>
+<br>
+
+<h2>Task 14 Auto Margin in Flex</h2>
+<div style="display:flex;">
+<div class="box" style="background:rgb(255, 255, 255);">Start</div>
+<div class="box" style="margin-left:auto;background:rgb(225,230,240);">End</div>
+</div>
+<br>
+
+<h2>Task 15 Button Design</h2>
+<button style="padding:15px 30px;margin:20px;background:rgb(255, 255, 255);">
+Button
+</button>
+<br>
+
+<h2>Task 16 Card Component Construction</h2>
+<div class="box" style="width:260px;background:rgb(245,245,245);">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBh5Wx06evrPooDpq6FK0gf2kLXXRlxrRBkA&s" width="100%">
+<h3>Title</h3>
+<p>Text</p>
+<button style="padding:10px 20px;background:rgb(230,235,245);">Action</button>
+</div>
+<br>
+
+<h2>Task 17 Box Size Illusion</h2>
+<div class="box" style="width:200px;height:100px;padding:40px;background:rgb(255, 255, 255);">Padding</div>
+<div class="box" style="width:200px;height:100px;margin:40px;background:rgb(255, 255, 255);">Margin</div>
+<br>
+
+<h2>Task 18 Broken Layout Diagnosis</h2>
+<div class="box" style="width:150px;padding:40px;box-sizing:border-box;background:rgb(255, 255, 255);">
+Box Sizing
+</div>
+<br>
+
+<h2>Task 19 When Margin Fails</h2>
+<div style="display:flex;align-items:center;justify-content:center;height:150px;background:rgb(255, 255, 255);">
+<div class="box" style="background:rgb(255, 255, 255);">Centered</div>
+</div>
+<br>
+
+<h2>Task 20 Rule Formation</h2>
+<div style="display:flex;gap:20px;">
+<div class="box" style="padding:20px;background:rgb(255, 255, 255);">Padding</div>
+<div class="box" style="margin:20px;background:rgb(255, 255, 255);">Margin</div>
+</div>
+
+</body>
+</html>
