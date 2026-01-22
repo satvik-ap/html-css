@@ -1,0 +1,159 @@
+/*basic box model */
+.task1{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+
+/* Task 2: Different Sides */
+.task2{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-width: 3px;
+    border-style: dashed;
+    border-color: rgb(0, 0, 255);
+    margin-left: 20px;
+}
+
+/* Task 3: Vertical Spacing */
+.task3{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 4px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+    margin-left: 20px;
+}
+
+/* Task 4: Image Padding */
+.task4{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+
+/* Task 5: Box Sizing */
+.task5{
+    font-size: 14px;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(128, 0, 128);
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+/* Task 6: Image Touching Border */
+.task6{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+
+/* Task 7: Separate Cards */
+.task7{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Task 8: Padding or Margin */
+.task8{
+    font-size: 14px;
+    width: 420px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+
+/* Task 9: Fix Width */
+.task9{
+    font-size: 14px;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(0, 128, 0);
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+/* Task 10: Image Card */
+.task10{
+    font-size: 14px;
+    width: 320px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(120, 120, 120);
+    margin-left: 20px;
+}
+
+/* Task 11: Horizontal Padding */
+.task11{
+    font-size: 14px;
+    width: 320px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(255, 165, 0);
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+/* Task 12: Product Card */
+.task12{
+    font-size: 14px;
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    margin-left: 20px;
+}

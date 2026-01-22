@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: #eaf6ff;
+  background:url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D);
+  background-size: cover;
+  overflow-y: hidden;
+}
+
+.top-header {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 25px;
+  backdrop-filter: blur(5px);
+}
+
+.navbar {
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  padding: 15px;
+  color: white;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
