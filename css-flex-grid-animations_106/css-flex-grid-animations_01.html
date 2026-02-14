@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+    }
+    .card{
+      width:300px;
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      text-align:center;
+      box-shadow:0 15px 30px rgba(0,0,0,0.15);
+      animation:fadeIn 0.8s ease-out;
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 22px 45px rgba(0,0,0,0.2);
+    }
+    .banner{
+      height:120px;
+      background:linear-gradient(45deg,#ff6b6b,#4ecdc4);
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      padding-bottom:10px;
+    }
+    .avatar{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:2.5rem;
+      color:#667eea;
+      box-shadow:0 8px 18px rgba(0,0,0,0.25);
+    }
+    .info{padding:20px;}
+    .name{font-size:1.4rem;font-weight:bold;color:#333;margin-bottom:4px;}
+    .role{font-size:0.95rem;color:#666;}
+    .socials{
+      margin-top:16px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+    }
+    .socials a{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      font-size:0.9rem;
+      text-decoration:none;
+      transition:transform 0.2s ease;
+    }
+    .socials a:hover{transform:scale(1.1);}
+    .gh{background:#333;}
+    .tw{background:#1da1f2;}
+    .li{background:#0077b5;}
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">
+      <div class="avatar">👾</div>
+    </div>
+    <div class="info">
+      <div class="name">satvik</div>
+      <div class="role">engineering student</div>
+      <div class="socials">
+        <a href="#" class="gh">GH</a>
+        <a href="#" class="tw">IG</a>
+        <a href="#" class="li">LI</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

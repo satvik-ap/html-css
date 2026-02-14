@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-commerce Layout - Alt</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4f6f9;
+}
+
+/* header-style filters */
+.filters-bar{
+  background:#fff;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  padding:15px 8%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 20px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.filters-title{
+  font-weight:bold;
+  font-size:16px;
+}
+
+.filters-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  list-style:none;
+  font-size:14px;
+}
+
+.filters-list a{
+  text-decoration:none;
+  color:#555;
+  padding:6px 10px;
+  border-radius:16px;
+  background:#f3f4f6;
+  transition:0.3s;
+}
+
+.filters-list a:hover{
+  background:#0072ff;
+  color:#fff;
+}
+
+/* product area */
+.products-wrapper{
+  padding:30px 8% 40px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  transition:0.3s ease;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  flex:1;
+}
+
+.card h4{
+  font-size:16px;
+}
+
+.price{
+  font-weight:bold;
+  color:#0072ff;
+}
+
+/* button + hover animation (same logic) */
+.btn{
+  margin-top:auto;
+  padding:10px;
+  border:none;
+  border-radius:25px;
+  background:#0072ff;
+  color:#fff;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:0.3s ease;
+}
+
+.btn::after{
+  content:"Add to Cart";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#00c6ff;
+  transform:translateY(100%);
+  transition:0.3s ease;
+}
+
+.btn:hover::after{
+  transform:translateY(0);
+}
+
+.btn:hover{
+  color:transparent;
+}
+
+/* responsive */
+@media(max-width:700px){
+  .filters-bar{
+    padding:12px 6%;
+    align-items:flex-start;
+  }
+  .products-wrapper{
+    padding:20px 6% 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP FILTER BAR INSTEAD OF SIDE COLUMN -->
+<header class="filters-bar">
+  <span class="filters-title">Categories</span>
+  <ul class="filters-list">
+    <li><a href="#">Electronics</a></li>
+    <li><a href="#">Fashion</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Sports</a></li>
+    <li><a href="#">Accessories</a></li>
+  </ul>
+</header>
+
+<!-- PRODUCTS GRID ONLY -->
+<main class="products-wrapper">
+  <section class="products">
+
+    <!-- Electronics -->
+    <div class="card">
+      <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-6141.jpg?auto=webp&quality=75&width=1024" alt="Wireless Headphones">
+      <div class="card-content">
+        <h4>Wireless Headphones</h4>
+        <span class="price">$49.99</span>
+        <button class="btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Fashion -->
+    <div class="card">
+      <img src="https://baccabucci.com/cdn/shop/products/MG_8308_b2720aa1-10ee-4a7b-9051-248beceb7a64.jpg?v=1635595861" alt="Street Sneakers">
+      <div class="card-content">
+        <h4>Street Sneakers</h4>
+        <span class="price">$69.99</span>
+        <button class="btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Home -->
+    <div class="card">
+      <img src="https://www.lightandyou.com/thumbnail/190531123257.jpg" alt="Minimal Desk Lamp">
+      <div class="card-content">
+        <h4>Minimal Desk Lamp</h4>
+        <span class="price">$89.99</span>
+        <button class="btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Sports -->
+    <div class="card">
+      <img src="https://dlcdnwebimgs.asus.com/gain/1F5AFFA6-D3DC-42CA-B37D-03DAAE123012/w750/h470/fwebp" alt="mouse">
+      <div class="card-content">
+        <h4>Training Football</h4>
+        <span class="price">$29.99</span>
+        <button class="btn">Buy Now</button>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+</body>
+</html>

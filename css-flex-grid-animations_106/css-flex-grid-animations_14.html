@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full Split Screen Layout</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      height:100%;
+    }
+    body{
+      font-family:system-ui,Arial,sans-serif;
+      background:#020617;
+      color:#e5e7eb;
+    }
+
+    .split{
+      display:flex;
+      width:100%;
+      height:100vh;          /* full screen height */
+      min-height:100vh;
+      background:#020617;
+      overflow:hidden;
+    }
+
+    .side{
+      flex:1 1 50%;
+      padding:2.5rem 2rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .left{
+      background:#020617;
+    }
+
+    .right{
+      background:#111827;
+    }
+
+    h1{
+      font-size:2rem;
+      margin-bottom:.5rem;
+    }
+
+    p{
+      font-size:.95rem;
+      color:#9ca3af;
+      max-width:28rem;
+    }
+
+    .tag{
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:#60a5fa;
+      margin-bottom:.6rem;
+    }
+
+    /* fade-in */
+    .fade{
+      opacity:0;
+      transform:translateY(20px);
+      transition:.45s ease;
+    }
+    .fade.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width:800px){
+      .split{
+        flex-direction:column;
+        height:auto;        /* allow scroll on small screens */
+        min-height:100vh;
+      }
+      .side{
+        padding:2rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="split fade">
+    <div class="side left">
+      <div class="tag">Split screen layout</div>
+      <h1>Full‑screen 50 / 50 Flexbox</h1>
+      <p>
+        Both halves take exactly half of the viewport, creating a clean full‑screen split layout.
+      </p>
+    </div>
+
+    <div class="side right">
+      <h2 style="font-size:1.2rem;margin-bottom:.4rem;">Right side content</h2>
+      <p>
+        Place an image, code block, or feature list here. On smaller screens the layout stacks vertically.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const split = document.querySelector('.split');
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        split.classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>

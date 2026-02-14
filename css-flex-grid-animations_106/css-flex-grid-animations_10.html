@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Testimonials</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:Arial, sans-serif;
+      background:#e5f0ff;              
+      color:#0f172a;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 16px;
+    }
+
+    .testimonials{
+      max-width:1000px;
+      width:100%;
+      display:flex;
+      gap:18px;
+    }
+
+    .card{
+      flex:1;
+      min-width:0;
+      background:#ffffff;
+      border-radius:16px;
+      padding:18px 20px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.12);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      border:1px solid #d1e4ff;
+      animation:float 4s ease-in-out infinite;
+      transition:background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:nth-child(2){border-color:#c7f0d8;}
+    .card:nth-child(3){border-color:#e3d4ff;}
+
+    .name{
+      font-weight:bold;
+      font-size:0.95rem;
+      color:#0f172a;
+    }
+    .role{
+      font-size:0.8rem;
+      color:#6b7280;
+    }
+    .text{
+      font-size:0.86rem;
+      color:#4b5563;
+    }
+
+    .card:hover{
+      background:#f0f7ff;           
+      transform:translateY(-4px) scale(1.02);
+      box-shadow:0 14px 30px rgba(15,23,42,0.18);
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-20px);}
+    }
+
+    @media(max-width:800px){
+      body{align-items:flex-start;}
+      .testimonials{flex-direction:column;}
+      .card{animation:none;}
+    }
+  </style>
+</head>
+<body>
+  <section class="testimonials">
+    <article class="card">
+      <div>
+        <div class="name">Aarav Shah</div>
+        <div class="role">Frontend Developer</div>
+      </div>
+      <p class="text">
+        “The layouts feel smooth and modern, built only with simple HTML and CSS.”
+      </p>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Meera Patel</div>
+        <div class="role">Product Designer</div>
+      </div>
+      <p class="text">
+        “Soft colors and gentle motion keep the testimonials readable and calm.”
+      </p>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Rohan Kumar</div>
+        <div class="role">Engineering Student</div>
+      </div>
+      <p class="text">
+        “Perfect for a clean portfolio or landing page without heavy effects.”
+      </p>
+    </article>
+  </section>
+</body>
+</html>

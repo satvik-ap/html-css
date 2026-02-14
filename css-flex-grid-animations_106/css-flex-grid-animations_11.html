@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Loader</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      height:100vh;
+      font-family:Arial, sans-serif;
+      background:#020617;
+      display:flex;                 /* Flexbox centering */
+      justify-content:center;       /* horizontal */
+      align-items:center;           /* vertical */
+      color:#e5e7eb;
+    }
+
+    .loader-wrapper{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+
+    .spinner{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      border:4px solid rgba(148,163,184,0.3);
+      border-top-color:#38bdf8;     /* accent color */
+      animation:spin 0.9s linear infinite;
+    }
+
+    @keyframes spin{
+      from{transform:rotate(0deg);}
+      to{transform:rotate(360deg);}
+    }
+
+    .label{
+      font-size:0.9rem;
+      color:#cbd5f5;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-wrapper">
+    <div class="spinner"></div>
+    <div class="label">Loading...</div>
+  </div>
+</body>
+</html>

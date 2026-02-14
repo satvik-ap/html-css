@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animated Buttons Collection</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,Arial,sans-serif;background:#0f172a;color:#e5e7eb}
+    main{max-width:960px;margin:0 auto;padding:2.5rem 1rem 3rem}
+    h1{text-align:center;font-size:1.6rem;margin-bottom:1.2rem}
+    p{text-align:center;font-size:.9rem;color:#9ca3af;margin-bottom:1.8rem}
+
+    .buttons-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1rem;
+    }
+    .btn{
+      position:relative;
+      min-width:140px;
+      padding:.7rem 1.2rem;
+      border-radius:.5rem;
+      font-size:.9rem;
+      border:none;
+      cursor:pointer;
+      background:none;
+      color:inherit;
+      transition:.25s ease;
+      overflow:hidden;
+    }
+
+    /* 1. Solid slide-up shadow */
+    .btn-solid{
+      background:#3b82f6;
+      box-shadow:0 4px 0 #1d4ed8;
+    }
+    .btn-solid:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 0 #1d4ed8;
+    }
+    .btn-solid:active{
+      transform:translateY(0);
+      box-shadow:0 2px 0 #1d4ed8;
+    }
+
+    /* 2. Outline grow */
+    .btn-outline{
+      border:2px solid #f97316;
+      color:#f97316;
+    }
+    .btn-outline::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:#f97316;
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .25s ease;
+      z-index:-1;
+    }
+    .btn-outline:hover{
+      color:#0f172a;
+    }
+    .btn-outline:hover::before{
+      transform:scaleX(1);
+    }
+
+    /* 3. Underline swipe */
+    .btn-underline{
+      color:#22c55e;
+    }
+    .btn-underline::after{
+      content:"";
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:6px;
+      height:2px;
+      background:#22c55e;
+      transform:scaleX(0);
+      transform-origin:center;
+      transition:transform .25s ease;
+    }
+    .btn-underline:hover::after{
+      transform:scaleX(1);
+    }
+
+    /* 4. Glow pulse */
+    .btn-glow{
+      background:#1e293b;
+      border:1px solid #6366f1;
+      box-shadow:0 0 0 rgba(99,102,241,.4);
+    }
+    .btn-glow:hover{
+      box-shadow:0 0 16px rgba(99,102,241,.7);
+    }
+
+    /* 5. Icon slide */
+    .btn-icon{
+      background:#0f766e;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.35rem;
+    }
+    .btn-icon span{
+      display:inline-block;
+      transition:transform .25s ease;
+    }
+    .btn-icon svg{
+      width:16px;height:16px;
+      transform:translateX(-4px);
+      transition:transform .25s ease;
+    }
+    .btn-icon:hover span{
+      transform:translateX(-2px);
+    }
+    .btn-icon:hover svg{
+      transform:translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Animated Buttons Collection</h1>
+    <p>Flexbox layout with five different hover animations.</p>
+
+    <div class="buttons-wrap">
+      <button class="btn btn-solid">Primary action</button>
+
+      <button class="btn btn-outline">Outline hover</button>
+
+      <button class="btn btn-underline">Underline swipe</button>
+
+      <button class="btn btn-glow">Soft glow</button>
+
+      <button class="btn btn-icon">
+        <span>With icon</span>
+        <svg viewBox="0 0 20 20" fill="none">
+          <path d="M5 10h8M11 6l4 4-4 4"
+                stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </main>
+</body>
+</html>

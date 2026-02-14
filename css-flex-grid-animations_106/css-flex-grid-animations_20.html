@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Advanced Creative Section</title>
+
+<style>
+
+/* ================= GRID (MAIN LAYOUT) ================= */
+body{
+  margin:0;
+  height:100vh;
+  display:grid;               /* GRID USED */
+  place-items:center;
+  background:linear-gradient(135deg,#141e30,#243b55);
+  font-family:Arial, sans-serif;
+}
+
+/* ================= CARD STACK ================= */
+.card-stack{
+  position:relative;
+  width:600px;
+  height:400px;
+}
+
+/* ================= CARD DESIGN ================= */
+.card{
+  position:absolute;          /* REQUIRED FOR OVERLAP */
+  width:260px;
+  height:360px;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  transition:0.4s;
+  animation: float 4s ease-in-out infinite;   /* Animation 1 */
+}
+
+/* Proper Overlapping Positions */
+.card:nth-child(1){
+  left:0;
+  top:20px;
+  transform:rotate(-8deg);
+  z-index:1;
+}
+
+.card:nth-child(2){
+  left:170px;   /* This causes overlap */
+  top:0;
+  z-index:3;
+}
+
+.card:nth-child(3){
+  left:340px;   /* This causes overlap */
+  top:20px;
+  transform:rotate(8deg);
+  z-index:2;
+}
+
+/* ================= IMAGE ================= */
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+/* ================= FLEX USED HERE ================= */
+.card-body{
+  display:flex;              /* FLEX USED */
+  flex-direction:column;
+  justify-content:space-between;
+  padding:15px;
+  height:130px;
+}
+
+.card-title{
+  font-size:18px;
+  font-weight:bold;
+}
+
+.card-meta{
+  font-size:14px;
+  color:gray;
+}
+
+/* ================= PROGRESS BAR ================= */
+.bar{
+  height:6px;
+  background:#ddd;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.bar-fill{
+  height:100%;
+  width:0%;
+  background:#0072ff;
+  animation: fill 3s forwards;   /* Animation 2 */
+}
+
+/* ================= HOVER ANIMATION ================= */
+.card:hover{
+  transform:scale(1.1) translateY(-15px);   /* Animation 3 */
+  z-index:5;
+}
+
+/* ================= KEYFRAMES ================= */
+@keyframes float{
+  0%{ transform:translateY(0px); }
+  50%{ transform:translateY(-15px); }
+  100%{ transform:translateY(0px); }
+}
+
+@keyframes fill{
+  from{width:0%;}
+  to{width:85%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card-stack">
+
+  <div class="card">
+    <img src="https://www.reliancegeneral.co.in/siteassets/rgiclassets/images/blogs-images/top-5-fastest-cars-in-the-world2.webp">
+    <div class="card-body">
+      <div>
+        <div class="card-title">Cars</div>
+        <div class="card-meta">Fastest cars</div>
+      </div>
+      <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHXaEgWb21XYBmVFTyqQQm6J3AjSfb30zjgw&s">
+    <div class="card-body">
+      <div>
+        <div class="card-title">Gaming PC</div>
+        <div class="card-meta">High performance</div>
+      </div>
+      <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://eu-images.contentstack.com/v3/assets/bltaec35894448c7261/blt14ae5f5e1c17b59b/67ab298a65fd0468c1f12d6e/trading_graphs_candlestick-min.jpg">
+    <div class="card-body">
+      <div>
+        <div class="card-title">Trading</div>
+        <div class="card-meta">Market charts</div>
+      </div>
+      <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

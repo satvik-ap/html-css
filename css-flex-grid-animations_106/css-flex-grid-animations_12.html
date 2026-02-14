@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Magazine Grid</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,Arial,sans-serif;background:#f3f4f6;color:#111}
+    main{max-width:960px;margin:0 auto;padding:2rem 1rem 3rem}
+
+    .fade{opacity:0;transform:translateY(16px);transition:.35s ease}
+    .fade.show{opacity:1;transform:translateY(0)}
+
+    .hero{margin-bottom:1.5rem}
+    .featured{
+      background:#fff;
+      border-radius:.75rem;
+      border:1px solid #e5e7eb;
+      padding:1.25rem 1rem 1.4rem;
+      display:grid;
+      gap:.75rem;
+    }
+    .featured small{
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#6b7280;
+    }
+    .featured h1{font-size:1.6rem;margin:.25rem 0 .35rem}
+    .featured p{font-size:.9rem;color:#4b5563}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:.9rem;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:.6rem;
+      padding:.9rem .85rem 1rem;
+      font-size:.85rem;
+    }
+    .card h2{font-size:1rem;margin-bottom:.25rem}
+
+    .feature-span{
+      grid-column:1/-1;
+    }
+
+    @media(max-width:800px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:550px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero fade">
+      <article class="featured">
+        <div>
+          <small>Featured article</small>
+          <h1>Simple CSS Grid Layout</h1>
+          <p>A clean, easy-to-read layout using just a few grid rules.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid fade">
+      <article class="card feature-span">
+        <h2>Main story</h2>
+        <p>This story spans the full grid width to stand out as your primary content.</p>
+      </article>
+
+      <article class="card">
+        <h2>Article one</h2>
+        <p>Short description of the first supporting article in your magazine.</p>
+      </article>
+
+      <article class="card">
+        <h2>Article two</h2>
+        <p>Another simple card with a title and a few lines of text.</p>
+      </article>
+
+      <article class="card">
+        <h2>Article three</h2>
+        <p>Use these cards for news, blog posts, or project highlights.</p>
+      </article>
+
+      <article class="card">
+        <h2>Article four</h2>
+        <p>Everything stays aligned automatically thanks to the grid.</p>
+      </article>
+
+      <article class="card">
+        <h2>Article five</h2>
+        <p>Add or remove cards; the layout will adapt on its own.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const targets=document.querySelectorAll('.fade');
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.2});
+    targets.forEach(t=>observer.observe(t));
+  </script>
+</body>
+</html>

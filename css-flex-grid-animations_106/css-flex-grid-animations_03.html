@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3x3 Product Grid</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:Arial, sans-serif;
+      background:#f3f4f6;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+      max-width:900px;
+      width:100%;
+    }
+    .card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    }
+    .card-img{
+      position:relative;
+      overflow:hidden;
+      height:180px;
+    }
+    .card-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.3s ease;
+    }
+    .card-img img:hover{
+      transform:scale(1.08);
+    }
+    .card-body{
+      padding:12px 14px 16px;
+    }
+    .title{
+      font-size:1rem;
+      font-weight:bold;
+      color:#111827;
+      margin-bottom:4px;
+    }
+    .price{
+      font-size:0.9rem;
+      color:#6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <div class="card-img">
+        <img src="https://image.cdn.shpy.in/278008/1687258550031_SKU-0743_0.jpg?width=600&format=webp" alt="Product 1">
+      </div>
+      <div class="card-body">
+        <div class="title">Wireless earbuds</div>
+        <div class="price">$14.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://www.lifelongindiaonline.com/cdn/shop/files/1_1_d3c97e8a-5f19-436f-90bd-6b68eec1bf77.jpg?v=1752144922&width=940" alt="Product 2">
+      </div>
+      <div class="card-body">
+        <div class="title">Power bank</div>
+        <div class="price">$24.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2024/11/portablebluetoothspeakers-2048px-9130.jpg?auto=webp&quality=75&width=1024" alt="Product 3">
+      </div>
+      <div class="card-body">
+        <div class="title">Bluetooth speaker</div>
+        <div class="price">$18.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv3Kn3PNojTI-ZPoEzqqaVR1e4Kk3GpgE5iA&s" alt="Product 4">
+      </div>
+      <div class="card-body">
+        <div class="title">Gaming mouse</div>
+        <div class="price">$22.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i0.wp.com/sharpi.in/wp-content/uploads/2025/08/9346a67fac894d0583838989df0a4de6-product-assets.jpg?fit=2000%2C1632&ssl=1" alt="Product 5">
+      </div>
+      <div class="card-body">
+        <div class="title">USB‑C hub</div>
+        <div class="price">$24.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://cdn.mos.cms.futurecdn.net/nDVfp7STvuAAmxEyAEiiLQ-1920-80.jpg" alt="Product 6">
+      </div>
+      <div class="card-body">
+        <div class="title">headphones</div>
+        <div class="price">$30.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://shop.zebronics.com/cdn/shop/articles/Zeb-Max-Chroma.jpg?v=1673860111&width=1500" alt="Product 7">
+      </div>
+      <div class="card-body">
+        <div class="title">Mechanical keyboard</div>
+        <div class="price">$49.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://images.samsung.com/is/image/samsung/assets/nl/11-2025/smaller/Watch8_Combo_PC-1440x640.jpg?imwidth=1366" alt="Product 8">
+      </div>
+      <div class="card-body">
+        <div class="title">Smartwatch</div>
+        <div class="price">$59.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://cdn.mos.cms.futurecdn.net/sCTUm3TGXAahNHu7wghtpP-2962-80.jpg" alt="Product 9">
+      </div>
+      <div class="card-body">
+        <div class="title">Laptop</div>
+        <div class="price">$480.99</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animated Background Section</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,Arial,sans-serif;
+      background:#020617;
+      color:#f9fafb;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem 1.5rem;
+      background:linear-gradient(-45deg,#0ea5e9,#6366f1,#ec4899,#22c55e);
+      background-size:300% 300%;
+      animation:moveGradient 14s ease infinite;
+    }
+
+    .hero-inner{
+      max-width:560px;
+    }
+
+    .fade-text{
+      opacity:0;
+      transform:translateY(12px);
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:.4s;
+    }
+
+    h1{
+      font-size:2rem;
+      margin-bottom:.4rem;
+    }
+
+    p{
+      font-size:.95rem;
+      color:#e5e7eb;
+    }
+
+    @keyframes moveGradient{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    @keyframes fadeInUp{
+      0%{opacity:0;transform:translateY(12px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
+
+    @media(max-width:600px){
+      h1{font-size:1.6rem}
+      p{font-size:.9rem}
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner fade-text">
+      <h1>gradient animation</h1>
+      <p>Smooth moving background with centered content and a soft text fade‑in.</p>
+    </div>
+  </section>
+</body>
+</html>
