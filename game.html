@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Toe</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{
+ height:100vh;display:flex;justify-content:center;align-items:center;
+ background:linear-gradient(135deg,#1e1e2f,#2d3250);color:#fff
+}
+.screen{
+ width:95%;max-width:450px;padding:25px;border-radius:15px;
+ background:rgba(255,255,255,.06);backdrop-filter:blur(8px);
+ text-align:center;display:none;animation:fade .4s ease
+}
+.active{display:block}
+h1{margin-bottom:20px}
+button{
+ padding:10px 20px;border:none;border-radius:25px;
+ background:#ff6b6b;color:#fff;cursor:pointer;
+ transition:.3s;font-weight:bold
+}
+button:hover{background:#ff4757;transform:scale(1.07)}
+.scoreboard{
+ display:flex;justify-content:space-between;
+ margin-bottom:15px;font-weight:bold
+}
+.timer{margin-bottom:15px}
+.board{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:10px;margin-bottom:20px
+}
+.cell{
+ aspect-ratio:1;display:flex;justify-content:center;
+ align-items:center;font-size:2rem;
+ background:#3b3f68;border-radius:12px;
+ cursor:pointer;transition:.3s
+}
+.cell:hover{background:#5055a8;transform:scale(1.05)}
+.win{background:#2ed573!important;animation:pulse .5s infinite alternate}
+@keyframes fade{
+ from{opacity:0;transform:translateY(10px)}
+ to{opacity:1;transform:translateY(0)}
+}
+@keyframes pulse{
+ from{transform:scale(1)}
+ to{transform:scale(1.08)}
+}
+@media(max-width:480px){.cell{font-size:1.6rem}}
+</style>
+</head>
+
+<body>
+
+<section class="screen active" id="start">
+ <h1>Tic Tac Toe</h1>
+ <button id="startBtn">Start Game</button>
+</section>
+
+<section class="screen" id="game">
+ <div class="scoreboard">
+  <div>X: <span id="sx">0</span></div>
+  <div>O: <span id="so">0</span></div>
+ </div>
+ <div class="timer">Time: <span id="time">0</span>s</div>
+ <div class="board" id="board"></div>
+ <button id="restart">Restart</button>
+</section>
+
+<section class="screen" id="over">
+ <h1 id="result"></h1>
+ <button id="home">Play Again</button>
+</section>
+
+<script>
+const board=document.getElementById("board"),
+start=document.getElementById("start"),
+game=document.getElementById("game"),
+over=document.getElementById("over"),
+result=document.getElementById("result");
+
+let player="X",cells=[],sx=0,so=0,timer,sec=0;
+
+document.getElementById("startBtn").onclick=()=>{
+ start.classList.remove("active");
+ game.classList.add("active");
+ init();startTimer();
+};
+document.getElementById("restart").onclick=()=>{init();startTimer()};
+document.getElementById("home").onclick=()=>{
+ over.classList.remove("active");
+ start.classList.add("active");
+};
+
+function init(){
+ board.innerHTML="";cells=[];player="X";
+ for(let i=0;i<9;i++){
+  const c=document.createElement("div");
+  c.className="cell";
+  c.onclick=()=>move(c,i);
+  board.appendChild(c);
+  cells.push(c);
+ }
+}
+
+function move(c){
+ if(c.textContent) return;
+ c.textContent=player;
+ if(win()){
+  update();finish(player+" Wins!");return;
+ }
+ if(cells.every(x=>x.textContent)){
+  finish("It's a Draw!");return;
+ }
+ player=player==="X"?"O":"X";
+}
+
+function win(){
+ const p=[[0,1,2],[3,4,5],[6,7,8],
+ [0,3,6],[1,4,7],[2,5,8],
+ [0,4,8],[2,4,6]];
+ return p.some(([a,b,c])=>{
+  if(cells[a].textContent &&
+     cells[a].textContent===cells[b].textContent &&
+     cells[a].textContent===cells[c].textContent){
+   cells[a].classList.add("win");
+   cells[b].classList.add("win");
+   cells[c].classList.add("win");
+   return true;
+  }
+ });
+}
+
+function update(){
+ if(player==="X"){
+  sx++;document.getElementById("sx").textContent=sx;
+ }else{
+  so++;document.getElementById("so").textContent=so;
+ }
+}
+
+function finish(msg){
+ clearInterval(timer);
+ game.classList.remove("active");
+ over.classList.add("active");
+ result.textContent=msg;
+}
+
+function startTimer(){
+ sec=0;document.getElementById("time").textContent=sec;
+ clearInterval(timer);
+ timer=setInterval(()=>{
+  sec++;document.getElementById("time").textContent=sec;
+ },1000);
+}
+</script>
+
+</body>
+</html>
